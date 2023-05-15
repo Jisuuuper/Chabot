@@ -1,0 +1,48 @@
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin-left: 20px;
+    margin-right: 50px;
+    table-layout: auto;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+th {
+    width: 100%;
+    color: rgb(0, 0, 0);
+}
+tr:hover {
+    background-color: #c7c7c7;
+}
+.delete-btn {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.delete-btn button {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+/* Responsive Styling */
+@media (max-width: 600px) {
+    table {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    th, td {
+        padding: 6px;
+        font-size: 12px;
+    }
+    .delete-btn button {
+        padding: 4px 8px;
+    }
+}

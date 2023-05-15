@@ -1,0 +1,401 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "Is anyone there?",
+        "Hello",
+        "What's up",
+        "Good day",
+        "Namaste",
+        "yo",
+        {"title": "asd", "responses":  []}
+      ],
+      "responses": [
+        "Hey",
+        "Hello",
+        "Hello, thanks for visiting",
+        "Good to see you again",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "cya",
+        "see you",
+        "bye bye",
+        "See you later",
+        "Goodbye",
+        "I am Leaving",
+        "Bye",
+        "Have a Good day",
+        "talk to you later",
+        "ttyl",
+        "i got to go",
+        "gtg"
+      ],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon.",
+        "Talk to you later",
+        "Goodbye!",
+        "Come back soon"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "jokes",
+      "patterns": [
+        "Tell me a joke",
+        "Joke",
+        "Make me laugh"
+      ],
+      "responses": [
+        "A perfectionist walked into a bar...apparently, the bar wasn't set high enough",
+        "I ate a clock yesterday, it was very time-consuming",
+        "Never criticize someone until you've walked a mile in their shoes. That way, when you criticize them, they won't be able to hear you from that far away. Plus, you'll have their shoes.",
+        "The world tongue-twister champion just got arrested. I hear they're gonna give him a really tough sentence.",
+        "I own the world's worst thesaurus. Not only is it awful, it's awful.",
+        "What did the traffic light say to the car? \"Don't look now, I'm changing.\"",
+        "What do you call a snowman with a suntan? A puddle.",
+        "How does a penguin build a house? Igloos it together",
+        "I went to see the doctor about my short-term memory problems – the first thing he did was make me pay in advance",
+        "As I get older and I remember all the people I’ve lost along the way, I think to myself, maybe a career as a tour guide wasn’t for me.",
+        "o what if I don't know what 'Armageddon' means? It's not the end of the world."
+      ],
+      "context": [
+        "jokes"
+      ]
+    },
+
+    {
+      "tag": "whatsup",
+      "patterns": [
+        "Whats up",
+        "Wazzup",
+        "How are you",
+        "sup","How you doing"
+      ],
+      "responses": [
+        "All good..What about you?"
+      ]
+    },
+    {
+      "tag": "haha",
+      "patterns": [
+        "haha",
+        "lol",
+        "rofl",
+        "lmao",
+        "thats funny"
+      ],
+      "responses": [
+        "Glad I could make you laugh !"
+      ]
+    },
+    {
+      "tag": "programmer",
+      "patterns": [
+        "Who made you",
+        "who designed you",
+        "who programmed you"
+      ],
+      "responses": [
+        "I was made by Team Albert&Friends"
+      ]
+    },
+    {
+      "tag": "Identity",
+      "patterns": [
+        "name",
+        "your name",
+        "do you have a name",
+        "what are you called",
+        "what is your name",
+        "what should I call you",
+        "whats your name?",
+        "what are you",
+        "who are you",
+        "who is this",
+        "what am i chatting to",
+        "who am i taking to",
+        "what are you"
+      ],
+      "responses": [
+        "A Deep-Learning chatbot",
+        "I'm Mind Reader",
+        "I am a Chatbot.",
+        "I am your helper"
+      ]
+    },
+    {
+        "tag": "activity",
+        "patterns": [
+          "what are you doing",
+          "what are you upto"
+        ],
+        "responses": [
+          "Talking to you, of course!"
+        ]
+    },
+    {
+       "tag": "number",
+       "patterns": [
+          "more info",
+          "contact info",
+          "how to contact college",
+          "college telephone number",
+          "college number",
+          "What is your contact no",
+          "Contact number?",
+          "how to call you",
+          "College phone no?",
+          "how can i contact you",
+          "Can i get your phone number",
+          "how can i call you",
+          "phone number",
+          "phone no",
+          "call"
+       ],
+       "responses": [
+          "You can contact at: #NUMBER"
+       ],
+       "context_set": ""
+    },
+    {
+       "tag": "random",
+       "patterns": [
+          "I love you",
+          "Will you marry me",
+          "Do you love me"
+       ],
+       "responses": [
+          "I am not program for this, please ask appropriate query"
+       ],
+       "context_set": ""
+    },
+    {
+       "tag": "swear",
+       "patterns": [
+          "fuck",
+          "bitch",
+          "shut up",
+          "hell",
+          "stupid",
+          "idiot",
+          "dumb ass",
+          "asshole",
+          "fucker"
+       ],
+       "responses": [
+          "please use appropriate language",
+          "Maintaining decency would be appreciated"
+       ],
+       "context_set": ""
+    },
+    {
+      "tag": "exclaim",
+      "patterns": [
+        "Awesome",
+        "Great",
+        "I know",
+        "ok",
+        "yeah"
+            ],
+      "responses": [
+        "Yeah!"
+      ]
+    },
+    {
+      "tag": "riddle",
+      "patterns": [
+        "Ask me a riddle",
+        "Ask me a question",
+        "Riddle"
+      ],
+      "responses": [
+        "What two things can you never eat for breakfast?.....Lunch and Dinner!",
+        "What word is spelled incorrectly in every single dictionary?.....Incorrectly",
+        " How can a girl go 25 days without sleep?.....She sleeps and night!",
+        "How do you make the number one disappear?.....Add the letter G and it’s 'gone'!",
+        " What will you actually find at the end of every rainbow?.....The letter 'w'",
+        "What can be caught but never thrown?.....A cold!",
+        "What has a thumb and four fingers but is not actually alive?.....Your Gloves!",
+        " What 5-letter word becomes shorter when you add two letters to it?.....Short",
+        "Why can't a bike stand on it's own?.....It is two-tired."
+      ],
+      "context": [
+        "riddles"
+      ]
+    },
+    {
+      "tag": "age",
+      "patterns": [
+        "how old are you","when were you made","what is your age","age"
+      ],
+      "responses": [
+        "I was made in 2023, if that's what you are asking!"
+      ]
+    },
+    {
+      "tag": "greetreply",
+      "patterns": [
+        "i am good",
+        "I'm good",
+        "i am fine",
+        " i'm fine","good"
+      ],
+      "responses": [
+        "Good to know!"
+      ]
+    },
+    {
+      "tag": "no",
+      "patterns": [
+        "no",
+        "nope"
+      ],
+      "responses": [
+        "ok"
+      ]
+    },
+    {
+      "tag": "nicetty",
+      "patterns": [
+        "it was nice talking to you",
+        "good talk"
+      ],
+      "responses": [
+        "It was nice talking to you as well! Come back soon!"
+      ]
+    },
+    {
+      "tag": "chatbot",
+      "patterns": [
+        "What is your purpose?",
+        "How can you help me?",
+        "Can you tell me about yourself?"
+      ],
+      "responses": [
+        "I am an Artificial Intelligence language model that is made to direct users to a specific part of the E-Forum website in relation to their queries.",
+        "My purpose as an AI language model is to guide users towards relevant sections of the E-Forum website based on their queries.",
+        "I have been designed as a language model using Artificial Intelligence to assist users in finding the appropriate section of the E-Forum website that is related to their specific inquiry."
+      ]
+    },
+    {
+      "tag": "appreciate",
+      "patterns": [
+        "You are awesome",
+        "you are the best",
+        "you are great",
+        "you are good"
+      ],
+      "responses": [
+        "Thank you!"
+      ]
+    },
+    {
+      "tag": "contact",
+      "patterns": [
+        "contact developer",
+        "contact programmer",
+        "contact creator"
+      ],
+      "responses": [
+        "You can contact my creator at his Linkedin profile : <a target=\\\"_blank\\\" href='https://www.linkedin.com/in/jireh-so-367171246/'>Click here</a>"
+      ]
+    },
+    {
+      "tag": "Program Language",
+      "patterns": [
+        "Java?",
+        "PHP?",
+        "CSS?",
+        "HTML?",
+        "C++?",
+        "Swift?",
+        "code?",
+        "Ruby?"
+      ],
+      "responses": [
+        "I am a basic trespicio, hence I am unable to directly respond to your query. Perhaps you could look at the Questions page on the E-Forum in this link: <a href='index.php'>Click here</a>",
+        "As a basic AI language model, I am unable to respond directly to that inquiry.",
+        "As a basic language model, I am unable to immediately answer that specific question.",
+        "I'm sorry as I cannot answer you directly, you can refer to questions in this <a link: <a href='index.php'>Click here</a>",
+        "As an artificial language model, I am unable to directly answer your question. Maybe you can look at the questions in this link: <a href='index.php'>Click here</a>"
+      ]
+    },
+    {
+      "tag": "dirSignUp",
+      "patterns": [
+        "How to Sign Up in this website?",
+        "Where can I signup?",
+        "Do you have a signup page here?",
+        "How to make account in this forum?",
+        "How to make acc in this website?",
+        "Can you direct me to the sign up page?"
+      ],
+      "responses": [
+        "You can sign in here: <a href='signup.php'>Click here</a>",
+        "You can click the sign up in the upper left of the website, or click on this link: <a href='signup.php'>Click here</a>"
+      ]
+    },
+    {
+      "tag": "dirPostQuestion",
+      "patterns": [
+        "How can I ask a question?",
+        "Where can I put my post?",
+        "Where should I post my inquiry?",
+        "Can you direct me to the question page?"
+      ],
+      "responses": [
+        "You can put your questions/inquiries here: <a href='copy_index.php'>Click here</a>\"",
+        "You can click the 'Ask Question' in the upper area of the website, or click on this link: <link>"
+      ]
+    },
+    {
+      "tag": "dirTags",
+      "patterns": [
+        "What are the categories in this website?",
+        "What are the tags in this website?",
+        "Where can I see tags?",
+        "Where can I see categories?"
+      ],
+      "responses": [
+        "You can see different kinds of tags here: <a href='category.php'>Click here</a>",
+        "You can see the tags in the right area of the website, or click on this link: <a href='category.php'>Click here</a>"
+      ]
+    },
+
+    {
+      "tag": "ask question",
+      "patterns": [
+        "post",
+        "problem"
+      ],
+      "responses": [
+        "Click here if you have a problem: <a href='http://localhost/beginner/ask_question.php'>Click here</a>",
+        "You can visit it here: <a href='http://localhost/beginner/ask_question.php'>Click here</a>"
+      ]
+    },
+
+    {
+      "tag": "suggest",
+      "patterns": [
+        "you are useless","useless","suggest","suggestions","you are bad"
+      ],
+      "responses": [
+        "Please mail your suggestions to jirehaguraso@gmail.com. Thank you for helping me improve!"
+      ]
+    }
+  ]
+}
