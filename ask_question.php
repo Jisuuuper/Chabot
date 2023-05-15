@@ -157,9 +157,10 @@
 		$title_post = addslashes($_POST['title_post']);
 		$post = addslashes($_POST['post']);
 		$user_id = $_SESSION['info']['id'];
+        $tag = $_POST['tag'];
 		$date = date('Y-m-d H:i:s');
 
-		$query = "insert into posts (user_id,title_post,post,image,date) values ('$user_id','$title_post','$post','$image','$date')";
+		$query = "insert into posts (user_id,title_post,post,image,tag,date) values ('$user_id','$title_post','$post','$image','$tag','$date')";
 
 		$result = mysqli_query($con,$query);
 
@@ -183,12 +184,14 @@
                     array_push($intents["intents"], Array("tag" => $row["tag"], "patterns" => Array($row["title_post"]), "responses" => Array()));
                 }
             }
+            echo $intents;
             $json = json_encode($intents);
             file_put_contents("intents.json", $json);
+
         }
  
-		header("Location: ask_question.php");
-		die;
+		// header("Location: ask_question.php");
+		// die;
 	}
 ?>
 <!DOCTYPE html>
@@ -522,7 +525,7 @@
 
 
 			<?php else:?>
-
+                <div><?php echo $tag_exists?></div>
 				<h2 style="text-align: center;">User Profile</h2>
                     <br>
                     <div style="margin: auto; max-width: 600px; text-align: center;">
