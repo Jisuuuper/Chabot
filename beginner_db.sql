@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2022 at 02:49 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: May 15, 2023 at 05:06 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,28 +24,55 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `forum`
+--
+
+CREATE TABLE `forum` (
+  `id` int(11) NOT NULL,
+  `parent_post` varchar(500) NOT NULL,
+  `parent_comment` varchar(500) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `student` varchar(1000) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `post` varchar(1000) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `forum`
+--
+
+INSERT INTO `forum` (`id`, `parent_post`, `parent_comment`, `student`, `post`, `date`) VALUES
+(15, '71', '0', 'albert', 'some of the possible libraries for python plotting a data are matplotlib, and pandas', '2023-05-15 07:41:34'),
+(16, '71', '15', 'albert', 'hello test reply', '2023-05-15 07:41:31'),
+(17, '71', '0', 'albert', 'another comment', '2023-05-15 07:42:20'),
+(18, '71', '0', 'albert', 'this is another comment lets go', '2023-05-15 07:44:03'),
+(27, '72', '0', 'albert', 'fourth', '2023-05-15 07:52:27'),
+(28, '72', '0', 'alber', 'fifth', '2023-05-15 07:53:44');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `posts`
 --
 
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `title_post` text NOT NULL,
   `post` text NOT NULL,
   `image` varchar(1024) NOT NULL,
+  `tag` varchar(255) NOT NULL,
   `date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `user_id`, `post`, `image`, `date`) VALUES
-(1, 2, 'this is my first post', '', '2022-06-05 08:08:48'),
-(2, 2, 'this is a post with an image', 'uploads/pexels-hitesh-choudhary-879109.jpg', '2022-06-05 08:10:16'),
-(3, 2, 'another post with out image', '', '2022-06-05 08:27:33'),
-(4, 2, 'a post with image', 'uploads/452748.jpg', '2022-06-05 08:28:50'),
-(5, 3, 'this is a post from john', '', '2022-06-05 08:37:59'),
-(9, 2, 'uyfvhkbhjkb\r\n\r\n<script>alert(\'hacked\')</script>\r\ndfqfffaefv\r\n\r\n\r\n\r\nqfqdfdfdfqd', '', '2022-06-05 09:08:30');
+INSERT INTO `posts` (`id`, `user_id`, `title_post`, `post`, `image`, `tag`, `date`) VALUES
+(88, 23, 'firts post', 'fisrtpost', '', 'PYTHON', '2023-05-15 17:00:22'),
+(89, 23, 'second post', 'second post', '', 'PYTHON', '2023-05-15 17:00:35'),
+(90, 23, 'second post', 'second post', '', 'PYTHON', '2023-05-15 17:03:34'),
+(91, 23, 'third post', 'third post', '', 'PYTHON', '2023-05-15 17:03:52');
 
 -- --------------------------------------------------------
 
@@ -59,20 +86,28 @@ CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `date` datetime NOT NULL,
-  `image` varchar(1024) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `image` varchar(1024) DEFAULT NULL,
+  `user_type` varchar(255) NOT NULL DEFAULT 'user'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `date`, `image`) VALUES
-(2, 'eathorne', 'email@email.com', 'password', '2022-06-05 07:59:14', 'uploads/452771.jpg'),
-(3, 'john', 'john@email.com', 'password', '2022-06-05 08:37:32', 'uploads/791a047636136702e25ba1096b11cfe7.jpg');
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `date`, `image`, `user_type`) VALUES
+(23, 'Jireh', 'jirehaguraso@gmail.com', '1234', '2023-05-13 04:39:13', 'uploads/OIP (1).jfif', 'user'),
+(24, 'loyd', 'loyd@gmail.com', '1234', '2023-05-13 04:40:36', NULL, 'user'),
+(25, 'Albert', 'albert@gmail.com', '1234', '2023-05-13 05:52:41', NULL, 'user');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `forum`
+--
+ALTER TABLE `forum`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `posts`
@@ -96,16 +131,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `forum`
+--
+ALTER TABLE `forum`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
