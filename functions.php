@@ -7,7 +7,7 @@ function check_login()
 {
 	if(empty($_SESSION['info'])){
 
-		header("Location: login.php");
+		header("Location: copy_login.php");
 		die;
 	}
 }

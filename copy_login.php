@@ -19,7 +19,7 @@
             if($row['user_type'] == 'admin'){
 
                 $_SESSION['info'] = $row;
-                header('location:admin-dashboard-page.php');
+                header('location:admin-dashboard.php');
                 die;
        
              }elseif($row['user_type'] == 'user'){

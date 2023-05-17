@@ -44,12 +44,12 @@
       <input type="text" name="password" required placeholder="Password">
 
 
-      <label for="user_type">Select user type:</label>
+      <!-- <label for="user_type">Select user type:</label>
       <select name="user_type" id="user_type" disabled>
          <option value="user">User</option>
          <option value="admin">Admin</option>
          
-      </select>
+      </select> -->
 
       <input class="form-btn" type="submit" name="submit" value="register now" >
 
