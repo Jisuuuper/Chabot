@@ -3,6 +3,7 @@
 	require "functions.php";
 
 	check_login();
+  
 ?>
 
 
@@ -70,7 +71,7 @@
          <div class="profile-details">
            <img src="image/images.png" alt="profileImg">
            <div class="name_job">
-             <div class="name"><?php echo $_SESSION['admin_name'] ?></div>
+             <div class="name"><?php echo $_SESSION['username'] ?></div>
              <div class="job">Admin</div>
            </div>
          </div>
@@ -87,18 +88,18 @@
 <div class="col-div-3">
   <div class="box">
     <div style="text-align:center;">
-      <!-- <?php
-      require 'config.php';
+      <!-- count the users -->
+      <?php
+        $query = "SELECT id FROM users ORDER BY id";
+        $query_run = mysqli_query($con, $query);
 
-      $query = "SELECT id FROM user_form ORDER BY id";
-      $query_run = mysqli_query($connection, $query);
+        if (!$query_run) {
+            die('Query Error: ' . mysqli_error($con));
+        }
+        $row = mysqli_num_rows($query_run);
+        echo '<h1>'. $row . '</h1>';
+      ?>
 
-      if (!$query_run) {
-          die('Query Error: ' . mysqli_error($connection));
-      }
-      $row = mysqli_num_rows($query_run);
-      echo '<h1>'. $row . '</h1>';
-      ?> -->
       <span>Total Users</span>
     </div>
     <i class='bx bx-user-circle bx-spin bx-flip-horizontal box-icon'></i>
@@ -107,18 +108,17 @@
 <div class="col-div-3">
   <div class="box">
     <div style="text-align:center;">
-      <!-- <?php
-      require 'config.php';
+        <!-- count the posts -->
+      <?php
+        $query = "SELECT id FROM posts ORDER BY id";
+        $query_run = mysqli_query($con, $query);
 
-      $query = "SELECT post_id FROM post_form ORDER BY post_id";
-      $query_run = mysqli_query($connection, $query);
-
-      if (!$query_run) {
-          die('Query Error: ' . mysqli_error($connection));
-      }
-      $row = mysqli_num_rows($query_run);
-      echo '<h1>' . $row . '</h1>';
-      ?> -->
+        if (!$query_run) {
+            die('Query Error: ' . mysqli_error($con));
+        }
+        $row = mysqli_num_rows($query_run);
+        echo '<h1>' . $row . '</h1>';
+      ?>
       <span>Total Post</span>
     </div>
     <i class='bx bx-mail-send bx-flip-vertical bx-fade-right box-icon'></i>
@@ -127,18 +127,18 @@
 <div class="col-div-3">
   <div class="box">
     <div style="text-align:center;">
-      <!-- <?php
-        require 'config.php';
-
-        $query = "SELECT tag_id FROM question_tag ORDER BY tag_id";
-        $query_run = mysqli_query($connection, $query);
+        <!-- count the tags -->
+      <?php
+        $query = "SELECT tag FROM posts ORDER BY tag";
+        $query_run = mysqli_query($con, $query);
 
         if (!$query_run) {
-            die('Query Error: ' . mysqli_error($connection));
+            die('Query Error: ' . mysqli_error($con));
         }
         $row = mysqli_num_rows($query_run);
         echo '<h1>' . $row . '</h1>';
-      ?> -->
+      ?>
+
       <span>Total Tags</span>
     </div>
     <i class='bx bx-tag bx-burst box-icon' ></i>

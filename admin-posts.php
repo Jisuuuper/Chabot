@@ -81,63 +81,61 @@
   
   <section class="home-section">
       <div class="text">Post</div>
-    <!-- <?php
+    <?php
         // Database connection settings
-        @include 'config.php';
+        require "functions.php";
 
         // Create a connection
-        $connection = mysqli_connect($hostname, $username, $password, $database);
+        $con = mysqli_connect($hostname, $username, $password, $database);
 
         // Check connection
-        if ($connection->connect_error) {
-            die("Connection failed: " . $connection->connect_error);
+        if ($con->connect_error) {
+            die("Connection failed: " . $con->connect_error);
         }
 
         // Delete user function
-        function deleteUser($connection, $userId) {
-          $deleteQuery = "DELETE FROM posr_form WHERE post_id = '$userId'";
-          if ($connection->query($deleteQuery) === TRUE) {
+        function deleteUser($con, $user_id) {
+          $deleteQuery = "DELETE FROM posts WHERE id = '$user_id'";
+          if ($con->query($deleteQuery) === TRUE) {
               echo "User deleted successfully.";
           } else {
-              echo "Error deleting user: " . $connection->error;
+              echo "Error deleting user: " . $con->error;
           }
         }
         // Check if a user ID is provided for deletion
         if (isset($_GET['userId'])) {
-          $userId = $_GET['userId'];
-          deleteUser($connection, $userId);
+          $user_id = $_GET['userId'];
+          deleteUser($con, $user_id);
         }
 
         // Query to retrieve all users
-        $query = "SELECT * FROM post_form";
+        $query = "SELECT * FROM posts";
         $result = $connection->query($query);
         
         // Check if any rows are returned
         if ($result->num_rows > 0) {
             echo "<table>";
             echo "<tr>
-                    <th>Post ID</th>
-                    <th>Post Username</th>
-                    <th>Post Email</th>
-                    <th>Post Title</th>
-                    <th>Post Category</th>
-                    <th>Post Attactment</th>
-                    <th>Post Description</th>
-                    <th>Post Time</th>
+                    <th>id</th>
+                    <th>user id</th>
+                    <th>Title post</th>
+                    <th>post</th>
+                    <th>image</th>
+                    <th>tag</th>
+                    <th>date</th>
                   </tr>";
             echo "<hr>";
 
             // Loop through each row and display user information
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
-                echo "<td>" . $row["post_id"] . "</td>";
-                echo "<td>" . $row["post_username"] . "</td>";
-                echo "<td>" . $row["post_email"] . "</td>";
-                echo "<td>" . $row["post_questionTitle"] . "</td>";
-                echo "<td>" . $row["post_category"] . "</td>";
-                echo "<td><a href='" . $row["post_attactment"] . "' >View Attachment</a></td>"; // Display attachment as a hyperlin
-                echo "<td>" . $row["post_description"] . "</td>";
-                echo "<td>" . $row["post_timedate"] . "</td>";
+                echo "<td>" . $row["id"] . "</td>";
+                echo "<td>" . $row["user_id "] . "</td>";
+                echo "<td>" . $row["title_post"] . "</td>";
+                echo "<td>" . $row["post"] . "</td>";
+                echo "<td>" . $row["image"] . "</td>";
+                echo "<td>" . $row["tag"] . "</td>";
+                echo "<td>" . $row["date"] . "</td>";
           
             }
 
@@ -148,7 +146,7 @@
 
         // Close the connection
         $connection->close();
-        ?> -->
+        ?>
 
   </section>
 
