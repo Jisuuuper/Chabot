@@ -8,12 +8,18 @@
 		$password = addslashes($_POST['password']);
 		$date = date('Y-m-d H:i:s');
 
-		$query = "insert into users (username,email,password,date) values ('$username','$email','$password','$date')";
+		// Perform email validation
+		if (strpos($email, "@usls.edu.ph") === false) {
+			// Invalid email address
+			echo "Only @usls.edu.ph email addresses are allowed.";
+		} else {
+			$query = "INSERT INTO users (username, email, password, date) VALUES ('$username', '$email', '$password', '$date')";
 
-		$result = mysqli_query($con,$query);
+			$result = mysqli_query($con, $query);
 
-		header("Location: copy_login.php");
-		die;
+			header("Location: copy_login.php");
+			die;
+		}
 	}
 ?>
 
