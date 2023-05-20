@@ -213,8 +213,7 @@
                         //}
                     ?>
                 </div>
-            </div>        
-            <button onclick="myFunction()">Copy text</button>   
+            </div>          
         </div>
     </div>
 </div>
