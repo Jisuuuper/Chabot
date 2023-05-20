@@ -1,1 +1,1 @@
-{"intents":[{"tag":"PYTHON","patterns":["firts post"],"responses":[]},{"tag":"JAVA","patterns":["HowtocodeJava?"],"responses":[]}]}
+{"intents":[{"tag":"PYTHON","patterns":["firts post"],"responses":[]},{"tag":"JAVA","patterns":["HowtocodeJava?"],"responses":[]},{"tag":"CSS","patterns":["Try ta pamangkot"],"responses":[]},{"tag":"C++","patterns":["PamangkotkoliwatC++"],"responses":[]}]}

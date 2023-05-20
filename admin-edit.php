@@ -43,6 +43,9 @@
         table tr {
           background-color: black;
         }
+        body {
+            overflow: scroll;
+        }
     </style>
     <script>
         $(document).ready(function(){
