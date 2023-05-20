@@ -6,6 +6,7 @@
 		$username = addslashes($_POST['username']);
 		$email = addslashes($_POST['email']);
 		$password = addslashes($_POST['password']);
+		$user_type = addslashes($_POST['user_type']);
 		$date = date('Y-m-d H:i:s');
 
 		// Perform email validation
@@ -13,7 +14,7 @@
 			// Invalid email address
 			echo "Only @usls.edu.ph email addresses are allowed.";
 		} else {
-			$query = "INSERT INTO users (username, email, password, date) VALUES ('$username', '$email', '$password', '$date')";
+			$query = "INSERT INTO users (username, email, password, user_type, date) VALUES ('$username', '$email', '$password', '$user_type', '$date')";
 
 			$result = mysqli_query($con, $query);
 
@@ -45,17 +46,17 @@
       
       <input type="text" name="username" required placeholder="Username">
 
-      <input type="email" name="email" required placeholder="Email">
+      <input type="email" name="email" required placeholder="Email @usls.edu.ph" pattern=".+@usls.edu.ph">
 
       <input type="text" name="password" required placeholder="Password">
 
 
-      <!-- <label for="user_type">Select user type:</label>
-      <select name="user_type" id="user_type" disabled>
+      <label for="user_type">Select user type:</label>
+      <select name="user_type" id="user_type">
          <option value="user">User</option>
          <option value="admin">Admin</option>
          
-      </select> -->
+      </select>
 
       <input class="form-btn" type="submit" name="submit" value="register now" >
 

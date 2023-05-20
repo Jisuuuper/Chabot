@@ -161,12 +161,16 @@
 		$date = date('Y-m-d H:i:s');
 
 		$query = "insert into posts (user_id,title_post,post,image,tag,date) values ('$user_id','$title_post','$post','$image','$tag','$date')";
+        $query2 = "insert into chatbot (patterns) values ('$title_post')";
 
 		$result = mysqli_query($con,$query);
+        $result2 = mysqli_query($con,$query2);
 
         $query = "select id, tag, title_post from posts";
+        $query2 = "select patterns from chatbot";
 
         $result = mysqli_query($con, $query);
+        $result2 = mysqli_query($con, $query2);
 
         if(mysqli_num_rows($result) > 0) {
             $intents = Array(

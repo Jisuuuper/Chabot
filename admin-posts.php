@@ -46,6 +46,13 @@
          <span class="tooltip">Dashboard</span>
       </li>
       <li>
+       <a href="admin-edit.php">
+       <i class='bx bx-align-left bx-spin bx-flip-horizontal'></i>
+         <span class="links_name">Edit Chatbot</span>
+       </a>
+       <span class="tooltip">Edit Chatbot</span>
+      </li>
+      <li>
        <a href="admin-users.php">
        <i class='bx bx-user-circle bx-spin bx-flip-horizontal'></i>
          <span class="links_name">User</span>

@@ -1,1 +1,1 @@
-{"intents":[{"tag":"PYTHON","patterns":["firts post"],"responses":[]}]}
+{"intents":[{"tag":"PYTHON","patterns":["firts post"],"responses":[]},{"tag":"JAVA","patterns":["HowtocodeJava?"],"responses":[]}]}
