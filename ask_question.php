@@ -529,7 +529,7 @@
 
 
 			<?php else:?>
-                <div><?php echo $tag_exists?></div>
+                <div><?php //echo $tag_exists?></div>
 				<h2 style="text-align: center;">User Profile</h2>
                     <br>
                     <div style="margin: auto; max-width: 600px; text-align: center;">
