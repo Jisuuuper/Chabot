@@ -133,9 +133,10 @@
 <section class="welcome-part-one">
     <div class="container">
         <div class="welcome-demop102 text-center">
-            <h2>Welcome to UniQue, A Campus E-Forum for University of St. La Salle students!</h2>
+            <h2>Welcome to UniQue, A Campus E-Forum for </h2>
+            <h2>University of St. La Salle students!</h2>
             <?php  if (isset($_SESSION['username']))?>
-            <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+            <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong>! How can we help you today?</p>
             <div class="button0239-item">
 
             </div>

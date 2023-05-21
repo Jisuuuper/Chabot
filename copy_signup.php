@@ -7,6 +7,7 @@
 		$email = addslashes($_POST['email']);
 		$password = addslashes($_POST['password']);
 		$user_type = addslashes($_POST['user_type']);
+		$image = "image/default.jpg";
 		$date = date('Y-m-d H:i:s');
 
 		// Perform email validation
@@ -14,7 +15,7 @@
 			// Invalid email address
 			echo "Only @usls.edu.ph email addresses are allowed.";
 		} else {
-			$query = "INSERT INTO users (username, email, password, user_type, date) VALUES ('$username', '$email', '$password', '$user_type', '$date')";
+			$query = "INSERT INTO users (username, email, password, user_type, image, date) VALUES ('$username', '$email', '$password', '$user_type', '$image', '$date')";
 
 			$result = mysqli_query($con, $query);
 

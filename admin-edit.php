@@ -133,7 +133,7 @@
                     // Attempt select query execution
                     $sql = "SELECT * FROM chatbot";
                     $empty = "";
-                    $visible;
+                    $visible = 0;
                     if($result = mysqli_query($link, $sql)){
                         if(mysqli_num_rows($result) > 0){ ?>
                             <table class="table table-bordered table-striped">
