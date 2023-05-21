@@ -104,7 +104,7 @@
                     <li><a href="ask_question.php">Ask Question</a></li>
                     <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags<span class="caret"></span></a>
                         <ul class="dropdown-menu animated zoomIn">
-                            <li><a href="question_tag.php">Add Tags</a></li>
+                            <!--<li><a href="question_tag.php">Add Tags</a></li>-->
                             <li><a href="tags.php">List of Tags</a></li>
                         </ul>
                     </li>
@@ -112,11 +112,8 @@
                         <ul class="dropdown-menu animated zoomIn">
                             <li><a href="contact_us.php"> Contact Us</a></li>
                             <li><a href="ask_question.php"> Ask Question </a></li>
-                            <li><a href="post-deatils.php"> Post-Details </a></li>
-                            <li><a href="user.php">All User</a></li>
-                            <li><a href="user_question.php"> User Details </a></li>
                             <li><a href="tags.php"> Tags </a></li>
-                            <li><a href="#"> 404 </a></li>
+                            <li><a href="edit_profile.php"> Edit Profile </a></li>
                         </ul>
                     </li>
                     <li class="dropdown"> 
@@ -136,7 +133,7 @@
             <h2>Welcome to UniQue, A Campus E-Forum for </h2>
             <h2>University of St. La Salle students!</h2>
             <?php  if (isset($_SESSION['username']))?>
-            <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong>! How can we help you today?</p>
+            <h4>Welcome <strong><?php echo $_SESSION['username']; ?></strong>! What inquiries do you have today?</h4>
             <div class="button0239-item">
 
             </div>
@@ -182,9 +179,9 @@
                                             <!-- profile picture -->
                                             <div class="left-user12923 left-user12923-repeat">
                                                 <a href="#"><img src="<?=$user_row['image']?>" alt="image"></a><a href="#"></a> 
-                                                <!-- <div style="text-align: center;">
+                                                <h4 style="text-align: center;">
                                                     <?=$user_row['username']?>
-                                                </div> -->
+                                                </h4>
                                             </div>
                                         </div>
                                         <div class="col-md-9">

@@ -52,8 +52,8 @@
       <input type="text" name="password" required placeholder="Password">
 
 
-      <label for="user_type">Select user type:</label>
-      <select name="user_type" id="user_type">
+      <label for="user_type" hidden>Select user type:</label>
+      <select name="user_type" id="user_type" hidden>
          <option value="user">User</option>
          <option value="admin">Admin</option>
          

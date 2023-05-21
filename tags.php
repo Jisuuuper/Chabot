@@ -103,7 +103,7 @@ check_login()
                         <li><a href="ask_question.php">Ask Question</a></li>
                         <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
                             <ul class="dropdown-menu animated zoomIn">
-                                <li><a href="question_tag.php">Add Tags</a></li>
+                                <!--<li><a href="question_tag.php">Add Tags</a></li>-->
                                 <li><a href="tags.php">List of Tags</a></li>
                             </ul>
                         </li>
@@ -111,14 +111,10 @@ check_login()
                         
                         <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Page <span class="caret"></span></a>
                             <ul class="dropdown-menu animated zoomIn">
-                                
                                 <li><a href="contact_us.php"> Contact Us</a></li>
                                 <li><a href="ask_question.php"> Ask Question </a></li>
-                                <li><a href="post-deatils.php"> Post-Details </a></li>
-                                <li><a href="user.php">All User</a></li>
-                                <li><a href="user_question.php"> User Details </a></li>
-                                <li><a href="category.php"> Tags </a></li>
-                                <li><a href="#"> 404 </a></li>
+                                <li><a href="tags.php"> Tags </a></li>
+                                <li><a href="edit_profile.php"> Edit Profile </a></li>
                             </ul>
                         </li>
                         <li class="dropdown"> 

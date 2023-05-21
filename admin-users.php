@@ -53,7 +53,7 @@
        </a>
        <span class="tooltip">Edit Chatbot</span>
       </li>
-      <li>
+      <!--<li>
        <a href="admin-users.php">
        <i class='bx bx-user-circle bx-spin bx-flip-horizontal'></i>
          <span class="links_name">User</span>
@@ -73,7 +73,7 @@
          <span class="links_name">Tag</span>
        </a>
        <span class="tooltip">Tag</span>
-     </li>
+     </li>-->
      <li class="profile">
          <div class="profile-details">
            <img src="image/images.png" alt="profileImg">
@@ -90,7 +90,7 @@
 <section class="home-section">
   <div class="text">User</div>
 
-  <!-- <?php
+   <?php
     // Database connection settings
     @include 'config.php';
 
@@ -150,7 +150,7 @@
 
     // Close the connection
     $connection->close();
-    ?> -->
+    ?> 
 
 </section>
   

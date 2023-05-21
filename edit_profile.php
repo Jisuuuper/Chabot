@@ -24,7 +24,7 @@
 		$query = "delete from posts where id = '$id' && user_id = '$user_id' limit 1";
 		$result = mysqli_query($con,$query);
 
-		header("Location: ask_question.php");
+		header("Location: edit_profile.php");
 		die;
 
 	}
@@ -70,7 +70,7 @@
 
 		$result = mysqli_query($con,$query);
  
-		header("Location: ask_question.php");
+		header("Location: edit_profile.php");
 		die;
 	}
 	elseif($_SERVER['REQUEST_METHOD'] == "POST" && !empty($_POST['action']) && $_POST['action'] == 'delete')
@@ -134,7 +134,7 @@
 			$_SESSION['info'] = mysqli_fetch_assoc($result);
 		}
 
-		header("Location: ask_question.php");
+		header("Location: edit_profile.php");
 		die;
 	}
 	elseif($_SERVER['REQUEST_METHOD'] == "POST" && !empty($_POST['post']))
@@ -305,7 +305,7 @@
                         <li><a href="ask_question.php">Ask Question</a></li>
                         <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
                             <ul class="dropdown-menu animated zoomIn">
-                                <!--<li><a href="question_tag.php">Add Tags</a></li>-->
+                                <li><a href="question_tag.php">Add Tags</a></li>
                                 <li><a href="tags.php">List of Tags</a></li>
                             </ul>
                         </li>
@@ -402,7 +402,7 @@
                                             <input type="hidden" name="action" value="post_delete">
 
                                             <button style="padding: 10px 20px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer;">Delete</button>
-                                            <a href="ask_question.php">
+                                            <a href="edit_profile.php">
                                                 <button type="button" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Cancel</button>
                                             </a>
                                         </form>
@@ -453,7 +453,7 @@
                             </div>
                             <br>
                             <button>Save</button>
-                            <a href="ask_question.php">
+                            <a href="edit_profile.php">
                                 <button type="button">Cancel</button>
                             </a>
                         </form>
@@ -489,7 +489,7 @@
 
                         <div style="text-align: center;">
                             <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Save</button>
-                            <a href="ask_question.php" style="text-decoration: none;">
+                            <a href="edit_profile.php" style="text-decoration: none;">
                                 <button type="button" style="padding: 10px 20px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer;">Cancel</button>
                             </a>
                         </div>
@@ -517,140 +517,36 @@
 
                         <button style="padding: 10px 20px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer;">Delete</button>
 
-                        <a href="ask_question.php" style="text-decoration: none; margin-left: 10px;">
+                        <a href="edit_profile.php" style="text-decoration: none; margin-left: 10px;">
                             <button type="button" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Cancel</button>
                         </a>
                     </form>
                 </div>
+
+
 			<?php else:?>
-				<hr>
-				
-				    <div class="ask-question-input-part032">
-                            <h4>Ask Question</h4>
-                        <hr>
-                        <form method="post" enctype="multipart/form-data">
-                                        <div class="question-title39">
-                                            <span class="form-description433">Question-Title* </span>
-                                            <input required name="title_post" placeholder="Write Your Question Title">
-                                        </div>
-                                        <div class="button-group-addfile3239">
-                                            <span class="form-description23993">Attactment*</span>
-                                            <input type="file" name="image" class="question-ttile3226">    
-                                        </div>
+                <div><?php //echo $tag_exists?></div>
+				<h2 style="text-align: center;">User Profile</h2>
+                    <br>
+                    <div style="margin: auto; max-width: 600px; text-align: center;">
+                        <div style="margin-bottom: 20px;">
+                            <img src="<?php echo $_SESSION['info']['image'] ?>" alt="User Image" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                            <h3><?php echo $_SESSION['info']['username'] ?></h3>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <p><?php echo $_SESSION['info']['email'] ?></p>
+                        </div>
 
-                                        <div class="categori49">
-                                            <span class="form-description43305">Tags* </span>
-                                                <label>
-                                                    <input list="browsers" name="tag" class="list-category53"/>
-                                                </label>
-                                                <datalist id="browsers">
-                                                    <option value="CSS">
-                                                    <option value="HTML">
-                                                    <option value="PYTHON">
-                                                    <option value="C#">
-                                                    <option value="JAVA">
-                                                    <option value="C++">
-                                                </datalist>
-                                            </input>
-                                        </div>
+                        <a href="edit_profile.php?action=edit" style="text-decoration: none; margin-right: 10px;">
+                            <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Edit Profile</button>
+                        </a>
 
-                                        <div class="details2-239" >
-                                            <div class="col-md-12 nopadding" >
-                                                <textarea id="w3review" name="post" rows="9" cols="107" ></textarea> 
-                                            </div>
-                                        </div>
-                            <div class="publish-button2389">
-                                <button type="submit" name="publish-button" value="upload" class="publis1291">Publish your Question</button>
-                            </div>
-                        </form>
+                        <a href="edit_profile.php?action=delete" style="text-decoration: none;">
+                            <button style="padding: 10px 20px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer;">Delete Profile</button>
+                        </a>
                     </div>
-				<hr>
-<posts>
-<!-- ======content section/body=====-->
-<section class="main-content920">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-                <div id="main">
-                <?php 
-						$id = $_SESSION['info']['id'];
-						$query = "select * from posts where user_id = '$id' order by id desc limit 10";
-
-						$result = mysqli_query($con,$query);
-					?>
-
-					<?php if(mysqli_num_rows($result) > 0):?>
-
-						<?php while ($row = mysqli_fetch_assoc($result)):?>
-
-                            <?php
-                                $user_id = $row['user_id'];
-                                $query = "select username,image from users where id = '$user_id' limit 1";
-                                $result2 = mysqli_query($con,$query);
-                                $user_row = mysqli_fetch_assoc($result2);
-                            ?>
-
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <!-- profile picture -->
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <img src="<?=$user_row['image']?>">
-                                            <br>
-                                            <!-- <?=$user_row['username']?> -->
-                                        </div>
-                                    </div>
-
-                                    
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <!-- post caption -->
-                                                <div id="que-hedder2983">
-                                                    <h3>
-                                                    <div>
-                                                        <?php echo nl2br(htmlspecialchars($row['title_post']))?>
-                                                    </div>
-                                                    </h3>
-                                                </div>
-                                            <!-- post image -->
-                                            <div class="ques-details10018">
-                                                <?php if(file_exists($row['image'])):?>
-                                                    <div style="">
-                                                        <img src="<?=$row['image']?>" style="width:100%;height:200px;object-fit: cover;">
-                                                    </div>
-                                                <?php endif;?>
-                                            </div>
-                                            <br>
-                                            <div id="que-hedder2983">
-                                                <div>
-                                                    <!-- <div style="color:#888"><?=date("jS M, Y",strtotime($row['date']))?></div> -->
-                                                    <?php echo nl2br(htmlspecialchars($row['post']))?>
-                                                    <br><br>
-                                                </div>
-                                            </div>
-                                            <br>
-                                            <div class="category">
-                                                <ul>
-                                                    <li><a type="" href=""><?php echo nl2br(htmlspecialchars($row['tag']))?></a></li>
-                                                </ul>
-                                            </div>
-                                            <hr>
-                                            <a href="ask_question.php?action=post_edit&id=<?= $row['id']?>">
-                                                <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Edit</button>
-                                            </a>
-
-                                            <a href="ask_question.php?action=post_delete&id=<?= $row['id']?>">
-                                                <button style="padding: 10px 20px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer;">Delete</button>
-                                            </a>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-						<?php endwhile;?>
-					<?php endif;?>
-				</posts>
                 </div>
             </div>
         </div>
