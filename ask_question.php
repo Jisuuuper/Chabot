@@ -313,7 +313,6 @@
 
                         <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Page <span class="caret"></span></a>
                             <ul class="dropdown-menu animated zoomIn">
-                                <li><a href="contact_us.php"> Contact Us</a></li>
                                 <li><a href="ask_question.php"> Ask Question </a></li>
                                 <li><a href="tags.php"> Tags </a></li>
                                 <li><a href="edit_profile.php"> Edit Profile </a></li>
