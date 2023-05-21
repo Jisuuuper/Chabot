@@ -133,6 +133,7 @@
                     // Attempt select query execution
                     $sql = "SELECT * FROM chatbot";
                     $empty = "";
+                    $visible;
                     if($result = mysqli_query($link, $sql)){
                         if(mysqli_num_rows($result) > 0){ ?>
                             <table class="table table-bordered table-striped">
@@ -145,7 +146,8 @@
                               </thead>
                               <tbody>
                                 <?php while($row = mysqli_fetch_array($result)){
-                                    if($row['responses'] == $empty){ ?>
+                                    if($row['responses'] == $empty){ 
+                                      $visible = 0;?>
                                       <tr>
                                           <td><?php echo $row['id'] ?></td>
                                           <td><?php echo $row['patterns'] ?></td>
@@ -153,6 +155,8 @@
                                               <a href="update.php?id=<?php echo $row['id']?>" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>
                                           </td>
                                       </tr><?php
+                                    }else{
+                                        $visible = 1;
                                     }
                                 } ?>
                               </tbody>                            
@@ -171,7 +175,10 @@
                     ?>
                 </div>
                 <div>
-                    <label> Code: </label> <br>
+                    <?php
+                    if ($visible == 1){
+                    ?>
+                    <label> For JSON file: </label> <br>
                     <?php
                     $con = mysqli_connect("localhost","root","","beginner_db");
 
@@ -211,6 +218,7 @@
                             //echo "\"patterns\": "
                             //$x++; 
                         //}
+                    }
                     ?>
                 </div>
             </div>          
