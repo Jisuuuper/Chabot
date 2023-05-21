@@ -134,7 +134,8 @@
     <div class="container">
         <div class="welcome-demop102 text-center">
             <h2>Welcome to UniQue, A Campus E-Forum for University of St. La Salle students!</h2>
-            
+            <?php  if (isset($_SESSION['username']))?>
+            <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
             <div class="button0239-item">
 
             </div>
@@ -234,8 +235,7 @@
                                                             <input type="hidden" id="thisreplypostid_<?=$row["id"]?>" name="thisreplypostid" value="<?=$row["id"]?>">
                                                             <input type="hidden" id="commentid" name="Rcommentid">
                                                             <div class="form-group">
-                                                            <label for="usr">Write your name:</label>
-                                                            <input type="text" class="form-control" name="Rname" required>
+                                                            <input type="hidden" class="form-control" name="Rname" value="<?php echo $_SESSION['username']; ?>">
                                                             </div>
                                                             <div class="form-group">
                                                             <label for="comment">Write your reply:</label>
@@ -255,11 +255,10 @@
                                                     <input type="hidden" id="thiscommentpostid_<?=$row["id"]?>" name="thiscommentpostid" value="<?=$row["id"]?>">
                                                     <input type="hidden" id="commentid" name="Pcommentid" value="0">
                                                     <div class="form-group">
-                                                        <label for="usr">Write your name:</label>
-                                                        <input type="text" class="form-control" name="name" required>
+                                                        <input type="hidden" class="form-control" name="name" value="<?php echo $_SESSION['username']; ?>">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="comment">Write your question:</label>
+                                                        <label for="comment">Write your comment:</label>
                                                         <textarea class="form-control" rows="5" name="msg" required></textarea>
                                                     </div>
                                                     <input type="button" id="butsave" name="save" class="btn btn-primary" value="Send">

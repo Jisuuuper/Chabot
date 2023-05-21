@@ -1,10 +1,11 @@
-<?php 
+<?php
+
+    $username = "";
 
 	require "functions.php";
 
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
-		
 		$email = addslashes($_POST['email']);
 		$password = addslashes($_POST['password']);
 
@@ -25,6 +26,7 @@
              }elseif($row['user_type'] == 'user'){
        
                 $_SESSION['info'] = $row;
+                $_SESSION['username'] = $row['username'];
                 header('location:copy_index.php');
                 die;
        
