@@ -192,7 +192,7 @@
                         $x = 0;
                         echo "{";
                         echo "<br>";
-                        echo "&nbsp&nbsp intents: [";
+                        echo "&nbsp&nbsp \"intents\": [";
                         echo "<br>";
                         if ($result->num_rows > 0) {
                         // output data of each row
