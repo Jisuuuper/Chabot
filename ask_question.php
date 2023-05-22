@@ -188,7 +188,7 @@
                     array_push($intents["intents"], Array("tag" => $row["tag"], "patterns" => Array($row["title_post"]), "responses" => Array()));
                 }
             }
-            echo $intents;
+            //echo $intents;
             $json = json_encode($intents);
             file_put_contents("intents.json", $json);
 
